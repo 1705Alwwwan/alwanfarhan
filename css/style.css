@@ -1,0 +1,42 @@
+.hero-section {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 409px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 150px;               /* Ukuran medium */
+  height: 150px;              /* Buat bulet sempurna */
+  object-fit: cover;          /* Cegah gambar gepeng */
+  border-radius: 50%;         /* Buat bulat */
+  border: 5px solid white;    /* Bingkai putih */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Efek halus */
+} 
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-slide {
+  opacity: 0;
+  animation: slideUp 1s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
