@@ -1,251 +1,288 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+import React, { useState, useEffect } from 'react';
+import { Network, Code, Settings, Menu, Download, Facebook, Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">MyPortfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-lg-3">
-          <a href="CV.pdf" download class="btn btn-outline-light btn-sm">
-            <i class="fas fa-download me-1"></i> CV
-          </a>
-        </li>
-      </ul>
+// Define the content data. Adjust this object to easily change the website content.
+const content = {
+    hero: {
+        name: 'Alwan Farhan Aziz',
+        tagline: 'IT Engineer & Software Developer | Passionate about Network and Web Development'
+    },
+    about: 'Experienced IT Engineer with over 5 years of proven expertise in operational IT, network infrastructure, and software development. Adept at troubleshooting networks, optimizing systems, and building applications using Python, C#, and Django. Passionate about continuous learning and implementing new technologies, currently pursuing a Bachelor of Computer Science degree to enhance programming skills.',
+    skills: [
+        {
+            icon: Network,
+            title: 'IT & Networking',
+            list: [
+                'Network Infrastructure (Subnetting, VLAN, Firewall)',
+                'Router & Switch Configuration',
+                'Hardware Maintenance & Troubleshooting',
+                'OS Installation & Security',
+                'Ethical Hacking (Wireshark, Nmap)'
+            ]
+        },
+        {
+            icon: Code,
+            title: 'Software Development',
+            list: [
+                'Web Development (Django, HTML, CSS, Bootstrap)',
+                'Programming Languages (Python, C#, JavaScript, PHP)',
+                'Databases (Sqlite3, MySQL)',
+                'Desktop App Development (Winform)',
+                'Web Scraping & REST APIs'
+            ]
+        },
+        {
+            icon: Settings,
+            title: 'Other Skills',
+            list: [
+                'IT Operational Support',
+                'Microsoft Office & Video Editing (Filmora)',
+                'English (TOEFL 550)',
+                'Japanese (JFT A2)'
+            ]
+        }
+    ],
+    projects: [
+        {
+            title: 'Shopee Scraper',
+            description: 'Developed a Python and Django-based web scraper to extract product data from Shopee, storing it in a database and visualizing it on a dashboard.'
+        },
+        {
+            title: 'Production Logger',
+            description: 'Created a WinForms application to record factory performance data, save it to Excel, and generate production statistics, improving efficiency.'
+        },
+        {
+            title: 'Machine Installation Topology',
+            description: 'Designed and implemented a new network topology and subnetting scheme for new machine installations, adhering to company policy.'
+        },
+        {
+            title: 'Kompas Article Scraper',
+            description: 'Built a web scraper to dynamically extract article news data from the Kompas website, showcasing expertise in data collection.'
+        },
+        {
+            title: 'Windows 11 Update Project',
+            description: 'Managed and executed a company-wide project to update operating systems from Windows 10 v22H2 to Windows 11 v23H2.'
+        },
+        {
+            title: 'Local IT Ticket Management',
+            description: 'Developed a desktop application using WinForms and C# for an internal ticketing management system, streamlining IT support requests.'
+        },
+        {
+            title: 'Migration Manageable Switch',
+            description: 'Migrated an old manageable switch to a new Cisco manageable switch, ensuring seamless network transition and improved performance.'
+        }
+    ],
+    socials: {
+        facebook: 'https://www.facebook.com/share/15gff746WY/',
+        github: 'https://github.com/1705Alwwwan?tab=repositories',
+        instagram: 'https://www.instagram.com/alwwwan_far/profilecard/?igsh=MTdhcjhvY3U0MmZkdw==',
+        linkedin: 'https://www.linkedin.com/in/alwan-farhan-aziz-5289aa194/'
+    },
+    contact: {
+        phoneNumber: '6289678194404'
+    }
+};
+
+// Component for a section with fade-in animation
+const AnimatedSection = ({ children, id, className }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+    return (
+        <section
+            id={id}
+            ref={ref}
+            className={`${className} transition-opacity duration-700 ease-out transform ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+        >
+            {children}
+        </section>
+    );
+};
+
+const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    return (
+        <nav className="bg-white shadow-lg fixed top-0 w-full z-50 rounded-b-xl">
+            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a className="text-2xl font-bold text-gray-800 rounded-lg px-2 py-1 transition duration-300" href="#hero">Alwan Farhan Aziz</a>
+                <div className="hidden lg:flex items-center space-x-6">
+                    <a className="text-gray-600 hover:text-gray-900 transition duration-300 font-semibold" href="#about">About</a>
+                    <a className="text-gray-600 hover:text-gray-900 transition duration-300 font-semibold" href="#skills">Skills</a>
+                    <a className="text-gray-600 hover:text-gray-900 transition duration-300 font-semibold" href="#projects">Projects</a>
+                    <a className="text-gray-600 hover:text-gray-900 transition duration-300 font-semibold" href="#contact">Contact</a>
+                    <a href="CV.pdf" download className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-300 shadow-md flex items-center">
+                        <Download className="w-4 h-4 mr-2" /> Download CV
+                    </a>
+                </div>
+                <button className="lg:hidden text-gray-800" onClick={toggleMenu}>
+                    <Menu className="w-6 h-6" />
+                </button>
+            </div>
+            {isMenuOpen && (
+                <div className="lg:hidden bg-white shadow-lg">
+                    <a className="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition duration-300" href="#about" onClick={toggleMenu}>About</a>
+                    <a className="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition duration-300" href="#skills" onClick={toggleMenu}>Skills</a>
+                    <a className="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition duration-300" href="#projects" onClick={toggleMenu}>Projects</a>
+                    <a className="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition duration-300" href="#contact" onClick={toggleMenu}>Contact</a>
+                    <div className="px-6 py-3">
+                        <a href="CV.pdf" download className="block bg-gray-800 text-white text-center px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-300 shadow-md flex items-center justify-center">
+                            <Download className="w-4 h-4 mr-2" /> Download CV
+                        </a>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+};
+
+const Hero = () => (
+    <div id="hero" className="bg-gray-900 text-white py-24 md:py-32 flex items-center justify-center min-h-screen">
+        <div className="container mx-auto px-6 text-center">
+            {/* Replace this placeholder with a link to your actual profile picture */}
+            <img 
+                src="https://placehold.co/180x180/4b5563/ffffff?text=ALWAN" 
+                alt="Profile Picture" 
+                className="w-48 h-48 rounded-full mx-auto mb-6 shadow-2xl animate-pulse"
+            />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mt-4">
+                Hi, I'm <span className="text-indigo-400">{content.hero.name}</span>
+            </h1>
+            <p className="text-lg sm:text-xl mt-4 font-light text-gray-300">
+                {content.hero.tagline}
+            </p>
+        </div>
     </div>
-  </div>
-</nav>
+);
 
-
-  <!-- Hero Section -->
-  <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center">
-  <img src="./images/alwan.png" alt="Foto Alwan" class="profile-img mb-3 animate-fade" />
-  <h1 class="display-4 text-black animate-slide">Hi, I'm <b>Alwan</b> Farhan Aziz</h1>
-  <p class="lead text-black animate-slide delay-1">IT Specialist | Web Developer | Python Scraper | Data Analytics | Tech Enthusiast</p>
-</section>
-
-
-
-
-
-
-  <!-- About -->
-  <section id="about" class="p-5">
-    <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p>
-        I am bachelor degree of English literature of STBA-JIA in 2020. My 
-        specialitation is IT in Operational, Program, Infrastrucutre and network. I am focus as IT since 2016 but it's not official.
-        and be official an IT as professional since 2022. 
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="p-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Skills</h2>
-      <div class="row">
-        <div class="col-md-4"><ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>Bootstrap</li>
-          <li>Web Development (Django, React Js)</li>
-          <li>Python (Web Scraping,  Django)</li>
-          <li>Back end system</li>
-          <li>REST APIs</li>
-          <li>Data Analyst</li>
-          <li>SQL & Excel</li>
-        </ul>
-      </div>
-        <div class="col-md-4">
-          <ul>
-          <li>Install OS and Software</li>
-          <li>make desktop application (winform)</li>
-          <li>make mobile application (.NET MAUI)</li>
-          <li>Make straight and overcross cable and phone cable</li>
-          <li>configure CCTV, LANTRONIX and AP</li>
-          <li>LAN Infrastrucutre (File sharing, Printer Sharing)</li>
-        </ul>
-      </div>
-        <div class="col-md-4">
-          <ul>
-            <li>Automation & RPA</li>
-            <li>Make a topology</li>
-            <li>Router Configuration (internet gateway, bridging, Multiple IP, firewall filter, Management Bandwidth) </li>
-            <li>Ms. Office</li>
-            <li>English</li>
-            <li>Japanese</li>
-            
-          </ul>
+const About = () => (
+    <AnimatedSection id="about" className="py-20 bg-gray-50 rounded-b-2xl">
+        <div className="container mx-auto px-6 max-w-4xl">
+            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">About Me</h2>
+            <p className="text-lg leading-relaxed text-gray-600 text-center">{content.about}</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </AnimatedSection>
+);
 
-  <!-- Projects -->
-  <section id="projects" class="p-5">
-  <div class="container">
-    <h2 class="mb-4">Projects</h2>
-    
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Shopee Scraper</h5>
-            <p class="card-text">Scraping product data from Shopee using Python and Django with database storage and dashboard view.</p>
-          </div>
+const Skills = () => (
+    <AnimatedSection id="skills" className="py-20">
+        <div className="container mx-auto px-6 max-w-6xl">
+            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Skills</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                {content.skills.map((skill, index) => (
+                    <div key={index} className="bg-white p-8 rounded-2xl shadow-xl transition transform hover:scale-105 duration-300 border-b-4 border-indigo-500">
+                        <div className="text-4xl text-indigo-500 mb-4">
+                            <skill.icon size={48} className="mx-auto" />
+                        </div>
+                        <h3 className="text-2xl font-semibold mb-4">{skill.title}</h3>
+                        <ul className="text-lg text-gray-600 list-disc list-inside space-y-2 text-left">
+                            {skill.list.map((item, i) => (
+                                <li key={i} className="text-gray-700">{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
-      </div>
-      
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Production Logger</h5>
-            <p class="card-text">WinForms app to record factory performance, save data to Excel, and generate production statistics.</p>
-          </div>
+    </AnimatedSection>
+);
+
+const Projects = () => (
+    <AnimatedSection id="projects" className="py-20 bg-gray-50 rounded-b-2xl">
+        <div className="container mx-auto px-6 max-w-6xl">
+            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {content.projects.map((project, index) => (
+                    <div key={index} className="bg-white p-8 rounded-2xl shadow-xl transition transform hover:scale-105 duration-300 border-b-4 border-gray-400">
+                        <h4 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h4>
+                        <p className="text-gray-600">{project.description}</p>
+                    </div>
+                ))}
+            </div>
         </div>
-      </div>
-      
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Machine Installation</h5>
-            <p class="card-text">Make new topology and doing subnetting based on network policy in company.</p>
-          </div>
+    </AnimatedSection>
+);
+
+const Contact = () => {
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+        const whatsappURL = `https://wa.me/${content.contact.phoneNumber}?text=${encodeURIComponent(
+            `Halo, saya ${name}.\nEmail: ${email}\nPesan: ${message}`
+        )}`;
+        window.open(whatsappURL, "_blank");
+    };
+
+    return (
+        <AnimatedSection id="contact" className="py-20 bg-gray-100 rounded-b-2xl">
+            <div className="container mx-auto px-6 max-w-2xl">
+                <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Contact Me</h2>
+                <form onSubmit={handleFormSubmit} className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-indigo-500">
+                    <div className="mb-6">
+                        <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Your Name</label>
+                        <input type="text" className="w-full px-4 py-3 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200" id="name" required />
+                    </div>
+                    <div className="mb-6">
+                        <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Your Email</label>
+                        <input type="email" className="w-full px-4 py-3 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200" id="email" required />
+                    </div>
+                    <div className="mb-6">
+                        <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea className="w-full px-4 py-3 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" className="w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-700 transition duration-300 shadow-lg">
+                        Send Message via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </AnimatedSection>
+    );
+};
+
+const Footer = () => (
+    <footer className="bg-gray-800 text-white py-8 rounded-t-xl">
+        <div className="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Alwan Farhan Aziz. All rights reserved.</p>
+            <div className="flex justify-center mt-4 space-x-6">
+                <a href={content.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition duration-300">
+                    <Facebook size={32} />
+                </a>
+                <a href={content.socials.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition duration-300">
+                    <Github size={32} />
+                </a>
+                <a href={content.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition duration-300">
+                    <Instagram size={32} />
+                </a>
+                <a href={content.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition duration-300">
+                    <Linkedin size={32} />
+                </a>
+            </div>
         </div>
-      </div>
+    </footer>
+);
 
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Scrape Article News of Kompas</h5>
-            <p class="card-text">Scrape data from Kompas news web based on the dynamic scrape.</p>
-          </div>
+export default function App() {
+    return (
+        <div className="bg-gray-100 font-inter text-gray-800 min-h-screen flex flex-col">
+            <Navbar />
+            <main>
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Contact />
+            </main>
+            <Footer />
         </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Windows Update 11 Project</h5>
-            <p class="card-text">Update OS form win 10 v22H2 to windows 11 v23H2.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Ticket Management for Local IT</h5>
-            <p class="card-text">Make desktop application with winform based on C# for ticketing management.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Migration Manageable Switch</h5>
-            <p class="card-text">Migrate switch from old manageable swit h to new cisco switch manageable.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambahkan kolom baru jika ada project tambahan -->
-    </div>
-  </div>
-</section>
-
-        <!-- Add more projects as needed -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="p-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Contact</h2>
-    <form id="contactForm">
-  <div class="mb-3">
-    <label for="name" class="form-label">Your Name</label>
-    <input type="text" class="form-control" id="name" required />
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Your Email</label>
-    <input type="email" class="form-control" id="email" required />
-  </div>
-  <div class="mb-3">
-    <label for="message" class="form-label">Message</label>
-    <textarea class="form-control" id="message" rows="4" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-dark">Send Message via WhatsApp</button>
-</form>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center p-3">
-    <div class="container">
-      <div>
-        &copy; Check my social media
-      </div>
-      <!-- Social Links -->
-<div class="text-center my-3">
-  <a href="https://www.facebook.com/share/15gff746WY/" target="_blank" class="text-light me-3">
-    <i class="fab fa-facebook fa-2x"></i>
-  </a>
-  <a href="https://github.com/1705Alwwwan?tab=repositories" target="_blank" class="text-light me-3">
-    <i class="fab fa-github fa-2x"></i>
-  </a>
-  <a href="https://www.instagram.com/alwwwan_far/profilecard/?igsh=MTdhcjhvY3U0MmZkdw==" target="_blank" class="text-light me-3">
-    <i class="fab fa-instagram fa-2x"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/alwan-farhan-aziz-5289aa194/" target="_blank" class="text-light">
-    <i class="fab fa-linkedin fa-2x"></i>
-  </a>
-</div>
-
-      
-    </div>
-  </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Mencegah form submit biasa
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    const phoneNumber = "6289678194404"; // Ganti dengan nomor WA kamu
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      `Halo, saya ${name}.\nEmail: ${email}\nPesan: ${message}`
-    )}`;
-
-    window.open(whatsappURL, "_blank"); // Buka WhatsApp di tab baru
-  });
-</script>
-
-</body>
-</html>
+    );
+}
