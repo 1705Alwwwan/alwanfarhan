@@ -3,158 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alwan Farhan Aziz - Portfolio</title>
-    <!-- Load Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Font Awesome for icons -->
+    <title>Alwan Farhan Aziz - Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Custom CSS for animations and a slicker design -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Very light blue-gray background */
-            color: #333;
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: #1a202c !important;
-            transition: color 0.3s ease;
-        }
-        .navbar-brand:hover {
-            color: #007bff !important;
-        }
-        .nav-link {
-            color: #555 !important;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #007bff !important;
-        }
-
-        .hero-section {
-            background-image: url('./images/background.jpg'); /* Bright background */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Parallax effect */
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.5); /* Lighter overlay */
-            backdrop-filter: blur(2px);
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #007bff;
-            box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
-            animation: pulse 2s infinite;
-        }
-
-        .section-heading {
-            color: #1a202c;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .card {
-            background-color: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 1rem;
-            color: #333;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .social-link i {
-            color: #555;
-            transition: color 0.3s, transform 0.3s;
-        }
-        .social-link:hover i {
-            color: #007bff;
-            transform: scale(1.1);
-        }
-
-        .btn-light-outline {
-            color: #007bff;
-            border-color: #007bff;
-            transition: all 0.3s;
-        }
-        .btn-light-outline:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        /* Animation Keyframes */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .fade-in-up {
-            opacity: 0;
-        }
-        .is-visible {
-            animation: fadeInUp 0.8s forwards;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Alwan Farhan Aziz</a>
+            <a class="navbar-brand" href="index.html">Alwan Farhan Aziz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                     <li class="nav-item ms-lg-3">
                         <a href="CV.pdf" download class="btn btn-primary rounded-pill d-flex align-items-center">
                             <i class="fas fa-download me-2"></i> Download CV
@@ -165,174 +31,14 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container text-center z-index-1 position-relative">
-            <!-- Ganti dengan URL foto profil Anda -->
-            <img src="./images/alwan.png" alt="Foto Alwan" class="profile-img mb-4 fade-in-up" style="animation-delay: 0.2s;" />
-            <h1 class="display-4 fw-bold fade-in-up" style="animation-delay: 0.4s;">Hi, I'm <span class="text-primary">Alwan</span> Farhan Aziz</h1>
-            <p class="lead text-dark fade-in-up" style="animation-delay: 0.6s;">IT Engineer & Software Developer | Passionate about Network and Web Development</p>
+    <section id="projects-page" class="py-5">
+        <div class="container mt-5 pt-4">
+            <h1 class="mb-5 text-center section-heading fade-in-up">All Projects</h1>
+            <div class="row g-4" id="project-list">
+                </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="mb-4 text-center section-heading fade-in-up">About Me</h2>
-            <p class="lead text-center text-secondary fade-in-up">
-                Experienced IT Engineer with over 5 years of proven expertise in operational IT, network infrastructure, and software development. Adept at troubleshooting networks, optimizing systems, and building applications using Python, C#, and Django. Passionate about continuous learning and implementing new technologies, currently pursuing a Bachelor of Computer Science degree to enhance programming skills.
-            </p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="mb-5 text-center section-heading fade-in-up">Skills</h2>
-            <div class="row g-4">
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card h-100 p-4">
-                        <div class="card-body text-center">
-                            <i class="fas fa-network-wired fa-3x text-primary mb-3"></i>
-                            <h5 class="card-title fw-bold">IT & Networking</h5>
-                            <ul class="list-unstyled text-start mt-3">
-                                <li>- Network Infrastructure (Subnetting, VLAN, Firewall)</li>
-                                <li>- Router & Switch Configuration</li>
-                                <li>- Hardware Maintenance & Troubleshooting</li>
-                                <li>- OS Installation & Security</li>
-                                <li>- Ethical Hacking (Wireshark, Nmap)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="card h-100 p-4">
-                        <div class="card-body text-center">
-                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
-                            <h5 class="card-title fw-bold">Software Development</h5>
-                            <ul class="list-unstyled text-start mt-3">
-                                <li>- Web Development (Django, HTML, CSS, Bootstrap)</li>
-                                <li>- Programming Languages (Python, C#, JavaScript, PHP)</li>
-                                <li>- Databases (Sqlite3, MySQL)</li>
-                                <li>- Desktop App Development (Winform)</li>
-                                <li>- Web Scraping & REST APIs</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="card h-100 p-4">
-                        <div class="card-body text-center">
-                            <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
-                            <h5 class="card-title fw-bold">Other Skills</h5>
-                            <ul class="list-unstyled text-start mt-3">
-                                <li>- IT Operational Support</li>
-                                <li>- Microsoft Office & Video Editing (Filmora)</li>
-                                <li>- English (TOEFL 550)</li>
-                                <li>- Japanese (JFT A2)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="mb-5 text-center section-heading fade-in-up">Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Shopee Scraper</h5>
-                            <p class="card-text text-secondary">Developed a Python and Django-based web scraper to extract product data from Shopee, storing it in a database and visualizing it on a dashboard.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Production Logger</h5>
-                            <p class="card-text text-secondary">Created a WinForms application to record factory performance data, save it to Excel, and generate production statistics, improving efficiency.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Machine Installation Topology</h5>
-                            <p class="card-text text-secondary">Designed and implemented a new network topology and subnetting scheme for new machine installations, adhering to company policy.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Kompas Article Scraper</h5>
-                            <p class="card-text text-secondary">Built a web scraper to dynamically extract article news data from the Kompas website, showcasing expertise in data collection.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Windows 11 Update Project</h5>
-                            <p class="card-text text-secondary">Managed and executed a company-wide project to update operating systems from Windows 10 v22H2 to Windows 11 v23H2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Local IT Ticket Management</h5>
-                            <p class="card-text text-secondary">Developed a desktop application using WinForms and C# for an internal ticketing management system, streamlining IT support requests.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Migration Manageable Switch</h5>
-                            <p class="card-text text-secondary">Migrated an old manageable switch to a new Cisco manageable switch, ensuring seamless network transition and improved performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="mb-5 text-center section-heading fade-in-up">Contact Me</h2>
-            <div class="row justify-content-center fade-in-up">
-                <div class="col-md-8">
-                    <form id="contactForm" class="bg-white p-4 rounded-3 shadow">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nama Anda</label>
-                            <input type="text" class="form-control" id="name" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Anda</label>
-                            <input type="email" class="form-control" id="email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            Kirim Pesan via WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
             <p class="mb-2">&copy; 2024 Alwan Farhan Aziz. All rights reserved.</p>
@@ -345,34 +51,132 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/projects.js"></script>
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', () => {
+            function getEndDate(duringString) {
+                // ... (fungsi yang sama) ...
+                const parts = duringString.split('–').map(s => s.trim());
+                const endPart = parts[parts.length - 1];
+                if (endPart.toLowerCase() === 'present') {
+                    return new Date();
+                }
+                const monthMapping = {
+                    'january': 0, 'february': 1, 'march': 2, 'april': 3, 'may': 4, 'june': 5,
+                    'july': 6, 'august': 7, 'september': 8, 'october': 9, 'november': 10, 'december': 11
+                };
+                let monthName, year;
+                const dateParts = endPart.split(' ');
+                if (dateParts.length > 1) {
+                    monthName = dateParts[0].toLowerCase();
+                    year = parseInt(dateParts[1]);
+                } else {
+                    monthName = endPart.toLowerCase();
+                    year = new Date().getFullYear();
+                }
+                const monthIndex = monthMapping[monthName];
+                if (monthIndex !== undefined) {
+                    return new Date(year, monthIndex + 1, 0);
+                }
+                return new Date(0);
+            }
+
+            projects.sort((a, b) => {
+                const dateA = getEndDate(a.during);
+                const dateB = getEndDate(b.during);
+                return dateB - dateA;
+            });
+
+            // Fungsi untuk merender semua proyek di halaman proyek
+            const projectList = document.getElementById('project-list');
+            projects.forEach((project, index) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'col-md-4 fade-in-up';
+                projectCard.style.animationDelay = `${0.2 * (index + 1)}s`;
+
+                let mediaContent = '';
+                if (project.type === 'image') {
+                    mediaContent = `<img src="${project.media_url}" alt="${project.title} Preview" class="img-fluid" onerror="this.onerror=null; this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Not+Found';">`;
+                } else if (project.type === 'video') {
+                    mediaContent = `
+                        <video src="${project.media_url}" preload="metadata" muted playsinline></video>
+                        <i class="fas fa-play play-button"></i>
+                    `;
+                }
+
+                const maxChars = 100;
+                let shortDescription = project.description;
+                let readMoreLink = '';
+
+                if (project.description.length > maxChars) {
+                    shortDescription = project.description.substring(0, maxChars) + '...';
+                    readMoreLink = `<span class="read-more-link" style="cursor: pointer; color: #0d6efd;">Baca selengkapnya</span>`;
+                }
+
+                const durationHtml = project.during ? `<p class="card-text text-muted small"><i class="far fa-calendar-alt me-1"></i> ${project.during}</p>` : '';
+                const skillSetHtml = project.skill_set ? `<p class="card-text text-info small"><i class="fas fa-tools me-1"></i> ${project.skill_set}</p>` : '';
+                const projectForHtml = project.project_for ? `<small class="text-secondary d-block"><i class="fas fa-building me-1"></i> ${project.project_for}</small>` : '';
+
+                projectCard.innerHTML = `
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="project-media bg-light d-flex align-items-center justify-content-center position-relative overflow-hidden">
+                            ${mediaContent}
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-primary">${project.title}</h5>
+                            ${durationHtml}
+                            ${skillSetHtml}
+                            ${projectForHtml}
+                            <p class="card-text text-secondary mt-2 flex-grow-1">
+                                <span class="short-desc">${shortDescription}</span>
+                                <span class="full-desc d-none">${project.description}</span>
+                                ${readMoreLink}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                projectList.appendChild(projectCard);
+            });
+
+            document.querySelectorAll('.project-media .play-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const video = this.previousElementSibling;
+                    if (video.paused) {
+                        video.play();
+                        this.classList.replace('fa-play', 'fa-pause');
+                        video.controls = true;
+                    } else {
+                        video.pause();
+                        this.classList.replace('fa-pause', 'fa-play');
+                        video.controls = false;
+                    }
                 });
             });
-        });
 
-        // Form WhatsApp submission
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-            const phoneNumber = "6289678194404";
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                `Halo, saya ${name}.%0AEmail: ${email}%0APesan: ${message}`
-            )}`;
-            window.open(whatsappURL, "_blank");
-        });
-        
-        // Animation on scroll logic
-        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.project-media video').forEach(video => {
+                video.addEventListener('ended', function() {
+                    this.pause();
+                    this.nextElementSibling.classList.replace('fa-pause', 'fa-play');
+                    this.controls = false;
+                });
+            });
+
+            document.querySelectorAll('.read-more-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const cardBody = this.closest('.card-body');
+                    const shortDesc = cardBody.querySelector('.short-desc');
+                    const fullDesc = cardBody.querySelector('.full-desc');
+                    shortDesc.classList.toggle('d-none');
+                    fullDesc.classList.toggle('d-none');
+                    if (shortDesc.classList.contains('d-none')) {
+                        this.textContent = 'Baca lebih sedikit';
+                    } else {
+                        this.textContent = 'Baca selengkapnya';
+                    }
+                });
+            });
+
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
