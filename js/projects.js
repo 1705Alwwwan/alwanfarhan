@@ -14,7 +14,7 @@ const projects = [
         description: "Transmitting local data to the RxCNC server to be read by the next process, increasing the accuracy of lens measurements for lux products, and making it easier for users to make final decisions before moving to the next process and dispatch session.",
         skill_set : "Network Engineering",
         type: "image",
-        media_url: "media/img/CC10Project.jpg",
+        media_url: "media/img/CC10project.jpg",
         project_for: "PT Supravisi Rama Optik Manufacturing (Essilor Group)"
     },
     {
