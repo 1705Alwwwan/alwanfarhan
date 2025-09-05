@@ -9,6 +9,15 @@ const projects = [
         project_for: "Self Project"
     },
     {
+        title: "Local Server for Development and Trial-and-Error Projects",
+        during : "August 2025 - present",
+        description: "Skill Development: It provides a hands-on platform to improve technical skills in server configuration and management., Diverse Implementations: It allows for the practical implementation of various server types, including web servers, file servers, DNS servers, and more, Web Development Environment: It serves as a dedicated space to develop, test, and host web programs and applications..",
+        skill_set : "Server Administration",
+        type: "image",
+        media_url: "media/video/localserver.mp4",
+        project_for: "Self Project"
+    },
+    {
         title: "Deployment: Provisioning of New Systems with Windows 11 for Intune Activation and Direct Registration to Azure ",
         during : "April - July 2025",
         description: "Optimizing the IT installation process, ensuring every device has an identical configuration, guaranteeing automatic updates for security, and reducing manual installation time.",
