@@ -13,7 +13,7 @@ const projects = [
         during : "August 2025 - present",
         description: "Skill Development: It provides a hands-on platform to improve technical skills in server configuration and management., Diverse Implementations: It allows for the practical implementation of various server types, including web servers, file servers, DNS servers, and more, Web Development Environment: It serves as a dedicated space to develop, test, and host web programs and applications..",
         skill_set : "Server Administration",
-        type: "image",
+        type: "video",
         media_url: "media/video/localserver.mp4",
         project_for: "Self Project"
     },
