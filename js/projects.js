@@ -1,5 +1,14 @@
 const projects = [
     {
+        title: "Development of a Mini Lab Network for a Small Office/Home Office (SOHO)",
+        during : "August 2025 - present",
+        description: "Honing Practical Skills: It provides a platform to apply theoretical knowledge and build hands-on expertise in networking., Validating Theories: It allows for the testing and validation of networking concepts in a controlled environment., Business Development: It supports preparation for freelance work in the networking field by building a relevant portfolio and skill set.",
+        skill_set : "Network Engineering and Netwrok Security",
+        type: "image",
+        media_url: "media/img/labself.jpg",
+        project_for: "Self Project"
+    },
+    {
         title: "Deployment: Provisioning of New Systems with Windows 11 for Intune Activation and Direct Registration to Azure ",
         during : "April - July 2025",
         description: "Optimizing the IT installation process, ensuring every device has an identical configuration, guaranteeing automatic updates for security, and reducing manual installation time.",
