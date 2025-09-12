@@ -37,14 +37,13 @@ body {
     color: #007bff !important;
 }
 
-/* New Banner Styling */
 #banner-callout {
     background-color: #007bff;
     color: white;
     padding: 1rem 0;
     text-align: center;
     position: relative;
-    top: 56px; /* Offset for fixed navbar height */
+    top: 56px;
     z-index: 1020;
     animation: slideInDown 0.8s ease-out;
 }
@@ -61,7 +60,6 @@ body {
 }
 
 .hero-section {
-    /* Updated background image path to the specified file */
     background-image: url('../images/background.png');
     background-size: cover;
     background-position: center;
@@ -102,16 +100,18 @@ body {
     display: inline-block;
 }
 
+/* --- Perubahan untuk Kartu --- */
 .card {
+    height: 100%; /* PENTING: Menjamin semua kartu dalam baris memiliki tinggi yang sama */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 1rem;
     color: #333;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card:hover {
@@ -140,7 +140,6 @@ body {
     color: #fff;
 }
 
-/* Keyframes animasi */
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
     70% { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); }
@@ -166,22 +165,30 @@ body {
     animation: fadeInUp 0.8s forwards;
 }
 
-/* Styling media card proyek */
-.project-media {
+/* Menyeragamkan tinggi kontainer media untuk proyek dan sertifikat */
+.project-media,
+.certificate-media {
     width: 100%;
-    height: 200px; /* Tinggi tetap untuk media */
+    height: 220px;
     overflow: hidden;
     position: relative;
-    background-color: #000;
+    background-color: #f8f9fa;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Pastikan gambar dan video di dalamnya mengisi ruang dengan benar */
+.project-media img,
 .project-media video,
-.project-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.certificate-media img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    box-sizing: border-box;
     display: block;
 }
 
@@ -201,24 +208,24 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* --- Sertifikat Styling (Perbaikan) --- */
-.certificate-media {
-    width: 100%;
-    height: 200px; /* Menyeragamkan tinggi kontainer gambar */
-    overflow: hidden;
-    position: relative;
-    background-color: #f8f9fa; /* Latar belakang abu-abu terang */
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    display: flex; /* Menggunakan flexbox untuk penempatan gambar di tengah */
-    align-items: center;
-    justify-content: center;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
 }
 
-.certificate-media img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Memastikan gambar terlihat utuh */
-    padding: 15px; /* Memberi jarak dari tepi kartu */
-    box-sizing: border-box;
+.card-text.text-secondary {
+    flex-grow: 1;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.row.row-cols-1.row-cols-md-3.g-4.align-items-stretch .col {
+    display: flex;
 }

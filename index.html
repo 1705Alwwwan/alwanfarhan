@@ -60,6 +60,7 @@
             </div>
         </div>
     </section>
+    
     <section id="certificates" class="py-5">
         <div class="container">
             <h2 class="mb-5 text-center section-heading fade-in-up">Certifications</h2>
@@ -71,7 +72,45 @@
         </div>
     </section>
 
-    
+    <section>
+        <div class="container my-5">
+            <h2 class="mb-5 text-center section-heading fade-in-up">Additional</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 align-items-stretch">
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="media/img/games.png" alt="Game Icon" class="card-icon">
+                            <h5 class="card-title">Game Center</h5>
+                            <p class="card-text">Let's play my games for entertain</p>
+                            <a href="games.html" class="btn btn-primary mt-auto">View Games</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="media/img/app.png" alt="App Icon" class="card-icon">
+                            <h5 class="card-title">Application </h5>
+                            <p class="card-text">See every app for help your activity.</p>
+                            <a href="app.html" class="btn btn-primary mt-auto">View Application</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="media/img/perpus.png" alt="Library Icon" class="card-icon">
+                            <h5 class="card-title">Digital Library</h5>
+                            <p class="card-text">Find your source book for studying.</p>
+                            <a href="https://1705alwwwan.github.io/pustakawan/" class="btn btn-primary mt-auto">View Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="py-5 bg-light">
         <div class="container">
@@ -149,8 +188,7 @@
                 return dateB - dateA;
             });
 
-            // Fungsi untuk merender hanya proyek unggulan di halaman utama
-            const featuredProjects = projects.slice(0, 3); // Ambil 3 proyek terbaru
+            const featuredProjects = projects.slice(0, 3);
             const featuredList = document.getElementById('featured-project-list');
             featuredProjects.forEach((project, index) => {
                 const projectCard = document.createElement('div');
@@ -201,8 +239,7 @@
                 featuredList.appendChild(projectCard);
             });
 
-            // New Certificate Rendering
-            const featuredCertificates = certificates.slice(0, 3); // Get the 3 latest certificates
+            const featuredCertificates = certificates.slice(0, 3);
             const certificateList = document.getElementById('certificate-list');
             featuredCertificates.forEach((cert, index) => {
                 const certCard = document.createElement('div');
