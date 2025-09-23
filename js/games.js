@@ -36,9 +36,9 @@ const games = [
         "cover": "media/img/gbk.jpg"
     },
     {
-        "title": "pLATFORMER",
+        "title": "PLATFORMER",
         "creator": "Alwan Farhan Aziz",
-        "file": "https://1705alwwwan.github.io/PLATFORMER/",
+        "file": "https://1705alwwwan.github.io/platformer/",
         "cover": "media/img/PF.jpg"
     },
     {
