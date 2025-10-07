@@ -1,5 +1,12 @@
 const certificates = [
     {
+        title: "MTCNA",
+        issuer: "MikroTik",
+        date: "October 2025",
+        image: "media/img/mtcna.jpg",
+        link: "https://mikrotik.com/training/certificates/c504537cfd4d45864bde"
+    },
+    {
         title: "Network Support & Security",
         issuer: "Cisco Network Academy (CNA)",
         date: "August 2025",
