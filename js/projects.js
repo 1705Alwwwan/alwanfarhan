@@ -1,5 +1,15 @@
 const projects = [
     {
+        title: "Automated DSPC Machine File Maintenance System",
+        during: "September 2025",
+        description: "An automated solution to maintain and update DSPC machine files (RxML, Engraving, SurfacingFiles, and PromapperSDF) whenever the production line is idle. This system ensures consistent file management, reduces downtime, and improves production efficiency.",
+        skill_set: "Automation with PowerShell Scripting",
+        type: "image",
+        media_url: "media/img/dspc.jpg",
+        project_for: "IT & Production Engineering Project"
+
+    },
+    {
         title: "Development of a Mini Lab Network for a Small Office/Home Office (SOHO)",
         during : "August 2025 - present",
         description: "Honing Practical Skills: It provides a platform to apply theoretical knowledge and build hands-on expertise in networking., Validating Theories: It allows for the testing and validation of networking concepts in a controlled environment., Business Development: It supports preparation for freelance work in the networking field by building a relevant portfolio and skill set.",
