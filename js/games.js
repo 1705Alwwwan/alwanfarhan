@@ -1,5 +1,11 @@
 const games = [
     {
+        "title": "Tebak AJa Dulu",
+        "creator": "Alwan Farhan Aziz",
+        "file": "https://1705alwwwan.github.io/kuis/",
+        "cover": "media/img/kuis.jpg"
+    },
+    {
         "title": "Spin Wheel",
         "creator": "Alwan Farhan Aziz",
         "file": "https://1705alwwwan.github.io/spinwheel/",
