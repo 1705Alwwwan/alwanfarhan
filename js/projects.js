@@ -1,5 +1,23 @@
 const projects = [
     {
+        title: "NVR and CCTV Deployment for PT Supravisi Rama Optik Manufacturing",
+        during: "October 2025 – Present",
+        description: "Designed and implemented a comprehensive CCTV and NVR system to enhance surveillance and maintain the security of the factory area.",
+        skill_set: "Network Infrastructure & Security Defense",
+        type: "image",
+        media_url: "media/img/hik.png",
+        project_for: "Self-Driven Project"
+    },
+    {
+        title: "Building a Free Firewall Using pfSense",
+        during: "October 2025",
+        description: "Developed and configured a pfSense-based firewall to strengthen network security within a personal security lab environment.",
+        skill_set: "Network & Cybersecurity Defense",
+        type: "image",
+        media_url: "media/img/fw.jpg",
+        project_for: "Self-Driven Project"
+    },
+    {
         title: "Automated DSPC Machine File Maintenance System",
         during: "September 2025",
         description: "An automated solution to maintain and update DSPC machine files (RxML, Engraving, SurfacingFiles, and PromapperSDF) whenever the production line is idle. This system ensures consistent file management, reduces downtime, and improves production efficiency.",
