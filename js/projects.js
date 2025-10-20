@@ -6,7 +6,7 @@ const projects = [
         skill_set: "Network Infrastructure & Security Defense",
         type: "image",
         media_url: "media/img/hik.png",
-        project_for: "Self-Driven Project"
+        project_for: "EssilorLuxottica Group"
     },
     {
         title: "Building a Free Firewall Using pfSense",
