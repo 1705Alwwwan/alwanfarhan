@@ -1,5 +1,12 @@
 const certificates = [
     {
+        title: "Fortinet NSE 4",
+        issuer: "ID-Networkers",
+        date: "October 2025",
+        image: "media/img/nse4.jpg",
+        link: "https://drive.google.com/drive/home"
+    },
+    {
         title: "MTCNA",
         issuer: "MikroTik",
         date: "October 2025",

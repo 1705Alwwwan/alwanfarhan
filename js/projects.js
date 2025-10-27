@@ -1,5 +1,14 @@
 const projects = [
     {
+        title: "1200-DLX-2 Machine Upgrade Project",
+        during: "October 2025",
+        description: "Upgrading the Syrus machine to the latest DLX series to enhance performance and production efficiency.",
+        skill_set: "Network Infrastructure & Security Defense",
+        type: "image",
+        media_url: "media/img/dlx12000.png",
+        project_for: "EssilorLuxottica Group"
+    },
+    {
         title: "NVR and CCTV Deployment for PT Supravisi Rama Optik Manufacturing",
         during: "October 2025 – Present",
         description: "Designed and implemented a comprehensive CCTV and NVR system to enhance surveillance and maintain the security of the factory area.",
