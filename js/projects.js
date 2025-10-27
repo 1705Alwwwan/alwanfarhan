@@ -5,7 +5,7 @@ const projects = [
         description: "Upgrading the Syrus machine to the latest DLX series to enhance performance and production efficiency.",
         skill_set: "Network Infrastructure & Security Defense",
         type: "image",
-        media_url: "media/img/dlx12000.png",
+        media_url: "media/img/dlx12000.jpg",
         project_for: "EssilorLuxottica Group"
     },
     {
