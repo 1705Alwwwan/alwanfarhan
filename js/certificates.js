@@ -1,4 +1,12 @@
 const certificates = [
+    
+    {
+        title: "Linux System Administration",
+        issuer: "ID-Networkers",
+        date: "November 2025",
+        image: "media/img/sysadminubuntu.jpeg",
+        link: "https://drive.google.com/drive/home"
+    },
     {
         title: "Fortinet NSE 4",
         issuer: "ID-Networkers",
