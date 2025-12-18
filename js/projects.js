@@ -1,4 +1,60 @@
 const projects = [
+    
+    {
+    title: "Automated PC Restart System",
+    during: "December 2025",
+    description: "Automated scheduled restart solution to maintain system stability, optimize performance, and minimize user-related operational issues.",
+    skill_set: "IT Automation, PowerShell Scripting, System Maintenance",
+    type: "image",
+    media_url: "media/img/restartauto.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+{
+    title: "Production Engineering Toolkit",
+    during: "November 2025",
+    description: "Custom desktop toolkit designed to improve production efficiency, streamline PE workflows, and significantly reduce operational failures.",
+    skill_set: "Production System Support, Visual Basic Programming, Machine Integration",
+    type: "image",
+    media_url: "media/img/toolkitpe.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+{
+    title: "IP & Port Scanning Utility",
+    during: "November 2025",
+    description: "Network scanning tool to detect active IP addresses and open ports, helping prevent IP conflicts and improve network reliability.",
+    skill_set: "Network Administration, Visual Basic Programming, Troubleshooting",
+    type: "image",
+    media_url: "media/img/scanrange.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+{
+    title: "IT Administration Efficiency System",
+    during: "November 2025",
+    description: "Application developed to automate daily IT administrative reporting, increasing productivity and reducing manual operational tasks.",
+    skill_set: "IT Operations, Visual Basic Programming, Process Automation",
+    type: "image",
+    media_url: "media/img/dailyreportit.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+{
+    title: "One-Click Network Connectivity Checker",
+    during: "November 2025",
+    description: "One-click diagnostic tool to test network connectivity across multiple endpoints using ping and traceroute for faster issue resolution.",
+    skill_set: "Network Diagnostics, Visual Basic Programming, Infrastructure Support",
+    type: "image",
+    media_url: "media/img/pingtracert.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+{
+    title: "Automated Fabric Network Monitoring",
+    during: "October 2025",
+    description: "Automated LAN monitoring system to continuously check connectivity across fabric systems and visualize network availability in real time.",
+    skill_set: "Network Monitoring, Python Streamlit, Infrastructure Automation",
+    type: "image",
+    media_url: "media/img/pingauto.jpg",
+    project_for: "EssilorLuxottica Group"
+},
+
     {
         title: "1200-DLX-2 Machine Upgrade Project",
         during: "October 2025",
